@@ -9,8 +9,8 @@ They will be exposed to users. Use environment variables instead.
 
 import os
 
-PROJECT_NAME = 'NEW_PROJECT_NAME'
-DEPLOYED_NAME = PROJECT_NAME 
+PROJECT_NAME = 'State of the Union'
+DEPLOYED_NAME = 'sotu'
 
 PRODUCTION_S3_BUCKETS = ['apps.npr.org', 'apps2.npr.org']
 PRODUCTION_SERVERS = ['cron.nprapps.org']
@@ -20,7 +20,7 @@ STAGING_SERVERS = ['cron-staging.nprapps.org']
 
 S3_BUCKETS = []
 SERVERS = []
-DEBUG = True 
+DEBUG = True
 
 PROJECT_DESCRIPTION = 'foo'
 SHARE_URL = 'http://%s/%s/' % (PRODUCTION_S3_BUCKETS[0], DEPLOYED_NAME)
@@ -66,7 +66,7 @@ def configure_targets(deployment_target):
         SERVERS = PRODUCTION_SERVERS
         DEBUG = False
 
-        CHAT['ID'] = '78919'
+        CHAT['ID'] = '80516'
     else:
         S3_BUCKETS = STAGING_S3_BUCKETS
         SERVERS = STAGING_SERVERS
