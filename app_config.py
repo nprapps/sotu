@@ -10,7 +10,7 @@ They will be exposed to users. Use environment variables instead.
 import os
 
 PROJECT_NAME = 'State of the Union'
-DEPLOYED_NAME = 'sotu'
+DEPLOYED_NAME = 'state-of-the-union'
 
 PRODUCTION_S3_BUCKETS = ['apps.npr.org', 'apps2.npr.org']
 PRODUCTION_SERVERS = ['cron.nprapps.org']
@@ -40,7 +40,7 @@ FACEBOOK = {
 
 NPR_DFP = {
     'STORY_ID': '139482413',
-    'TARGET': '\/news_election_results;storyid=139482413'
+    'TARGET': '\/news_stateoftheunion;storyid=139482413'
 }
 
 GOOGLE_ANALYTICS_ID = 'UA-5828686-4'
