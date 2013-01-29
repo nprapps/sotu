@@ -2,24 +2,58 @@
 <html lang="en">
 
 <head>
-    <title>{{ PROJECT_NAME }}</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Dear Mr. President | NPR</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <base target="_top" />
 
-	{{ CSS.push('less/widget.less') }}
-	{{ CSS.render('css/widget.min.css') }}
-	
-    {{ JS.push('js/app_config.js') }}
-    {{ JS.push('js/console.js') }}
-	{{ JS.push('js/lib/jquery-1.8.3.js') }}
-	{{ JS.render('js/widget-header.min.js') }}
+    {{ CSS.push('less/external-widget.less') }}
+    {{ CSS.render('css/external-widget.min.css') }}
+
+    {{ JS.push('js/lib/jquery-1.8.3.js') }}
+    {{ JS.render('js/external-app-header.min.js') }}
 </head>
 <body>
-    <h1>Let's rap.</h1>
+<a href="http://apps.npr.org/inauguration/">
+    <div class="header">
+        <h1><span class="npr">NPR</span> State Of The Union 2013</h1>
+    </div>
+    <div class="wrapper">
+        <div class="col">
+            <div class="wrap">
+                <h2>Chat With Us</h2>
+                <div id="live-chat-widget-wrapper">
+                    <div id="live-chat-widget"></div>
+                </div>
+                <p>Starting at 11 a.m. ET, talk with NPR reporters about President Obama's second term.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="wrap">
+                <h2>Streaming Audio</h2>
+                <div class="live-audio-img"></div>
+                <p>Audio begins at 5 a.m. ET with <em>Morning Edition</em>, followed by special coverage and <em>All Things Considered</em>.</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="wrap">
+                <h2>Live Coverage</h2>
+                <ul>
+                    <li><span><strong>8:30 p.m. ET:</strong> live chat begins</span></li>
+                    <li><span><strong>9:00 p.m. ET:</strong> NPR special coverage begins</span></li>
+                    <li><span><strong>Following the President's speeech</strong> XXXX delivers the Republican response to the president's speech from XXX, XXX</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</a>
 
-{{ JS.push('js/widget.js') }}
-{{ JS.render('js/widget-footer.min.js') }}
+{{ JS.push('js/lib/underscore.js') }}
+{{ JS.push('js/lib/moment.js') }}
+{{ JS.push('js/templates.js') }}
+{{ JS.push('js/chat-widget.js') }}
+{{ JS.push('js/external-widget.js') }}
+{{ JS.render('js/external-app-footer.min.js') }}
 </body>
 </html>

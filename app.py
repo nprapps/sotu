@@ -55,7 +55,7 @@ def _templates_js():
 def _app_config_js():
     config = flatten_app_config()
     js = 'window.APP_CONFIG = ' + json.dumps(config)
-    
+
     return js, 200, { 'Content-Type': 'application/javascript' }
 
 # Server arbitrary static files on-demand
@@ -74,7 +74,7 @@ def urlencode_filter(s):
     """
     if type(s) == 'Markup':
         s = s.unescape()
-        
+
     s = s.encode('utf8')
     s = urllib.quote_plus(s)
 

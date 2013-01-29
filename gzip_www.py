@@ -5,6 +5,7 @@ import gzip
 import os
 import shutil
 
+
 class FakeTime:
     def time(self):
         return 1261130520.0
@@ -12,6 +13,7 @@ class FakeTime:
 # Hack to override gzip's time implementation
 # See: http://stackoverflow.com/questions/264224/setting-the-gzip-timestamp-from-python
 gzip.time = FakeTime()
+
 
 def main():
     with open('gzip_types.txt') as f:
@@ -26,13 +28,13 @@ def main():
                 continue
 
             file_path = os.path.join(path, filename)
-            
+
             f_in = open(file_path, 'rb')
             contents = f_in.readlines()
             f_in.close()
             f_out = gzip.open(file_path, 'wb')
             f_out.writelines(contents)
-            f_out.close();
+            f_out.close()
 
 if __name__ == '__main__':
     main()
