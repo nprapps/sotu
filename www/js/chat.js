@@ -10,8 +10,8 @@
         // Immutable configuration
         var NPR_AUTH_URL = 'https://api.npr.org/infinite/v1.0/login/';
         var JANRAIN_INFO_URL = 'https://rpxnow.com/api/v2/auth_info';
-        var OAUTH_KEY = 'oauthKey0';
-        var SCRIBBLE_AUTH_KEY = 'testAuth4';
+        var OAUTH_KEY = 'oauthSotu2013';
+        var SCRIBBLE_AUTH_KEY = 'scribbleSotu2013';
         var SCRIBBLE_AUTH_EXPIRATION = 118;
 
         // Settings
