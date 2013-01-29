@@ -257,6 +257,15 @@ def deploy(remote='origin'):
     if env.get('deploy_to_servers', False):
         checkout_latest(remote)
 
+def deploy_radio(path):
+    """
+    Deploys an radio status file to radio.json
+    """
+    require('settings', provided_by=[production, staging])
+
+    for bucket in env.s3_buckets:
+        local('s3cmd -P --add-header=Cache-control:max-age=5 put ' + path + ' s3://' + bucket + '/%(deployed_name)s/live-data/radio.json' % env)
+
 def radio_off():
     """
     Shortcut to deploy_radio:data/radio-off.json
