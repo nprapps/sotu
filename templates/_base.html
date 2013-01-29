@@ -2,17 +2,16 @@
 <html lang="en">
 
 <head>
-    <title>{{ DEPLOYED_NAME }}</title>
-	
-    <meta name="description" content="{{ PROJECT_DESCRIPTION }}">
+    <title>Inauguration 2013</title>
+
     <meta http-equiv="X-UA-Compatible" content="IE=8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="http://media.npr.org/favicon.ico" />
 
-	<!-- CHARTBEAT -->
+    <!-- CHARTBEAT -->
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-    
+
     <!-- CSS -->
     {{ CSS.push('css/bootstrap.css') }}
     {{ CSS.push('css/bootstrap-responsive.css') }}
@@ -30,137 +29,144 @@
     </script>
 
     <!-- JS -->
-	{{ JS.push('js/app_config.js') }}
-	{{ JS.push('js/console.js') }}
-	{{ JS.push('js/lib/jquery-1.8.3.js') }}
+    {{ JS.push('js/app_config.js') }}
+    {{ JS.push('js/console.js') }}
+    {{ JS.push('js/lib/jquery-1.8.3.js') }}
     {{ JS.push('js/lib/modernizr.js') }}
     {{ JS.push('js/responsive-ad.js') }}
     {% block extra_head_js %}{% endblock extra_head_js %}
     {{ JS.render('js/app-header.min.js') }}
 
-	<script>
-    	AddNamespace('NPR.serverVars');
-		jQuery.extend(NPR.serverVars, {
-            "storyId": "{{ NPR_DFP.STORY_ID }}",
-	        "serverType": "prod",
-            "DFPtarget": "{{ NPR_DFP.TARGET }}",
-	        "DFPuserver": "u.npr.org",
-	        "DFPserver": "ad.doubleclick.net",
-	        "DFPnetwork": "n6735",
-	        "DFPsite": "NPR",
-	        "DFPmobile": "NPR"
-	    });
-	</script>
+    <script>
+        AddNamespace('NPR.serverVars');
+        jQuery.extend(NPR.serverVars, {
+            "storyId": "169527517",
+            "serverType": "prod",
+            "DFPtarget": "\/news_inauguration_apps;storyid=169527517",
+            "DFPuserver": "u.npr.org",
+            "DFPserver": "ad.doubleclick.net",
+            "DFPnetwork": "n6735",
+            "DFPsite": "NPR",
+            "DFPmobile": "NPR"
+        });
+    </script>
 
-    <meta property="og:title" content="{{ FACEBOOK.TITLE }}" />
-    <meta property="og:url" content="{{ FACEBOOK.URL }}" />
-	<meta property="og:type" content="article" />
-    <meta property="og:description" content="{{ FACEBOOK.DESCRIPTION }}" />
-    <meta property="og:image" content="{{ FACEBOOK.IMAGE_URL }}" />
-	<meta property="og:site_name" content="NPR.org" />
-    <meta property="fb:app_id" content="{{ FACEBOOK.APP_ID }}" />
+    <meta property="og:title" content="Inauguration 2013 : NPR" />
+    <meta property="og:url" content="http://apps.npr.org/inauguration/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="What do you want the president to remember in his second term? Send a postcard, chat about the inauguration & tune in to NPR!" />
+    <meta property="og:image" content="https://pbs.twimg.com/media/BA6UgqqCYAE0EG_.jpg" />
+    <meta property="og:site_name" content="NPR.org" />
+    <meta property="fb:app_id" content="138837436154588" />
 
     {% block extra_head %}
     {% endblock extra_head %}
 </head>
 <body>
-	{% block outer_content %}
-    
-    <nav>
-    	<ul class="site-links">
-    		<li class="npr"><a href="http://npr.org"><img src="http://media.npr.org/chrome/news/nprlogo_138x46.gif" alt="NPR" /></a></li>
-    		<li class="news"><a href="http://www.npr.org/sections/news/">News</a></li>
-    		<li class="arts"><a href="http://www.npr.org/sections/arts/">Arts &amp; Life</a></li>
-    		<li class="music"><a href="http://www.npr.org/music/">Music</a></li>
-    		<li class="listen"><a href="http://www.npr.org/listen/">Listen</a></li>
-    	</ul>
-		<ul class="social-links">
-            <li class="twitter"><a rel="external" href="http://twitter.com/share?text={{ TEXT }}&amp;url={{ TWITTER.URL|urlencode }}" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', '{{ PROJECT_NAME }}']);">Share This Page On Twitter</a></li>
-            <li class="facebook"><a rel="external" href="https://www.facebook.com/dialog/feed?app_id={{ FACEBOOK.APP_ID }}&amp;link={{ FACEBOOK.URL|urlencode }}&name={{ FACEBOOK.TITLE }}" alt="Share on Facebook" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Facebook In Navbar', '{{ PROJECT_NAME }}']);">Like This Page On Facebook</a></li>
-        </ul>
-    	<ul class="site-links-2">
-			<li class="stations"><a href="http://www.npr.org/templates/stations/stations/">Stations</a></li>
-			<li class="donate"><a href="http://www.npr.org/stations/donate/index.php">Donate</a></li>
-			<li class="shop"><a href="http://shop.npr.org">Shop</a></li>
-		</ul>
-    </nav>
-    
-	{% block header_content %}
-	{% endblock header_content %}
-	
-	<section class="the-goods">
-		<div class="container">
-			<div class="row">
-				<div id="main-content" class="span8">
-					{% block content %}
-					<h1>{{ project_name }}</h1>
-					App content goes here.
-					{% endblock content %}
-				</div>
-				<div class="span4">
-					{# 300x250 ad #}
-					<div class="adwrapper">
-						<div class="sponsor300">
-							<script type="text/javascript">
-							<!--
-							try {
-								DFP.renderLocation('desktop');
-							} catch(e) {
-								NPR.messaging.warning('Problem fetching/rendering desktop ad server code.', 'DFP.renderLocation', NPR.messaging.constants.SPONSORSHIP_ERROR);
-							}
-							// -->
-							</script>
-						</div>
-					</div>
-				</div>
-			</div>
-			{% block wide_content %}
-			{% endblock wide_content %}
-		</div>
-	</section>
-        
-	<footer>
-		<div class="primary">
-			<ul>
-				<li><a href="http://www.npr.org" data-action="Click Logo"><img src="http://media.npr.org/chrome/news/nprlogo_138x46.gif" alt="NPR Logo"></a></li>
-				<li class="news"><a href="http://www.npr.org/sections/news/">News</a></li>
-				<li class="artslife"><a href="http://www.npr.org/sections/arts/">Arts &amp; Life</a></li>
-				<li class="music"><a href="http://www.npr.org/music/">Music</a></li>
-				<li class="programs"><a href="http://www.npr.org/programs/">Programs</a></li>
-				<li class="listen"><a href="http://www.npr.org/listen/">Listen</a></li>
-				<li class="about"><a href="http://www.npr.org/about/">About</a></li>
-			</ul>
-		</div>
-		<div class="secondary">
-			<p>&copy;2013 NPR</p>
-			<ul>
-				<li id="footerContact"><a href="http://help.npr.org/npr/includes/customer/npr/custforms/contactus.aspx">Contact</a></li>
-				<li><a href="http://www.npr.org/about/termsofuse.html">Terms of Use</a></li>
-				<li><a href="http://www.npr.org/about/privacypolicy.html">Privacy</a></li>
-				<li><a href="http://thin.npr.org/">Text-Only</a></li>
-			</ul>
-		</div>
-	</footer>
+    {% block outer_content %}
 
-    {# Adhesion ad #}
+    <div id="nav">
+        <ul class="site-links">
+            <li class="npr"><a href="http://npr.org"><img src="http://media.npr.org/chrome/news/nprlogo_138x46.gif" alt="NPR" /></a></li>
+            <li class="news"><a href="http://www.npr.org/sections/news/">News</a></li>
+            <li class="arts"><a href="http://www.npr.org/sections/arts/">Arts &amp; Life</a></li>
+            <li class="music"><a href="http://www.npr.org/music/">Music</a></li>
+            <li class="listen"><a href="http://www.npr.org/listen/">Listen</a></li>
+        </ul>
+        <ul class="social-links">
+        <!--TODO: FIX SOCIAL LINKS -->
+            <li class="twitter"><a rel="external" href="http://twitter.com/share?text=What%20would%20you%20tell%20the%20president%3F%20Send%20a%20postcard%2C%20chat%20about%20the%20inauguration%20%26%20tune%20in%20to%20NPR!%20http%3A%2F%2Fpic.twitter.com%2Fijb3eBfG&amp;url=http%3A%2F%2Fapps.npr.org%2Finauguration%2F" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', 'Inauguration 2013']);">Share This Page On Twitter</a></li>
+            <li class="facebook"><a rel="external" href="http://www.facebook.com/sharer/sharer.php?t=What%20would%20you%20tell%20the%20president%3F%20Send%20a%20postcard%2C%20chat%20about%20the%20inauguration%20%26%20tune%20in%20to%20NPR!%20http%3A%2F%2Fpic.twitter.com%2Fijb3eBfG&amp;u=http%3A%2F%2Fapps.npr.org%2Finauguration%2F" alt="Share on Facebook" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Facebook In Navbar', 'Inauguration 2013']);">Like This Page On Facebook</a></li>
+        </ul>
+        <ul class="site-links-2">
+            <li class="stations"><a href="http://www.npr.org/templates/stations/stations/">Stations</a></li>
+            <li class="donate"><a href="http://www.npr.org/stations/donate/index.php">Donate</a></li>
+            <li class="shop"><a href="http://shop.npr.org">Shop</a></li>
+        </ul>
+    </div>
+
+    <div id="radio-topper">
+        <div class="container">
+            <div class="row">
+                <div class="span8">
+                    {% block top_content %}
+                    <h1>{{ project_name }}</h1>
+                    App content goes here.
+                    {% endblock top_content %}
+                </div>
+                <div class="span4">
+                    <!-- START 300X250 AD -->
+                    <div class="adwrapper"><div class="sponsor300">
+                    <!-- DFP AD MANAGER -->
+                    <script type="text/javascript">
+                    <!--
+                        try{
+                            DFP.renderLocation('desktop');
+                        } catch(e) {
+                            // wheee
+                        }
+                    // -->
+                    </script>
+                    <!-- END UNDERWRITING -->
+                    </div></div>
+                    <!-- END 300X250 AD -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content">
+        {% block main_content %}
+        App content goes here.
+        {% endblock main_content %}
+    </div> <!-- end main container -->
+
+
+    <div id="footer">
+        <div class="primary">
+            <ul>
+                <li><a href="http://www.npr.org" data-action="Click Logo"><img src="http://media.npr.org/chrome/news/nprlogo_138x46.gif" alt="NPR Logo"></a></li>
+                <li class="news"><a href="http://www.npr.org/sections/news/">News</a></li>
+                <li class="artslife"><a href="http://www.npr.org/sections/arts/">Arts &amp; Life</a></li>
+                <li class="music"><a href="http://www.npr.org/music/">Music</a></li>
+                <li class="programs"><a href="http://www.npr.org/programs/">Programs</a></li>
+                <li class="listen"><a href="http://www.npr.org/listen/">Listen</a></li>
+                <li class="about"><a href="http://www.npr.org/about/">About</a></li>
+            </ul>
+        </div>
+        <div class="secondary">
+            <p>&copy;2013 NPR</p>
+            <ul>
+                <li id="footerContact"><a href="http://help.npr.org/npr/includes/customer/npr/custforms/contactus.aspx">Contact</a></li>
+                <li><a href="http://www.npr.org/about/termsofuse.html">Terms of Use</a></li>
+                <li><a href="http://www.npr.org/about/privacypolicy.html">Privacy</a></li>
+                <li><a href="http://thin.npr.org/">Text-Only</a></li>
+            </ul>
+        </div>
+    </div> <!-- end footer -->
+
     <div id="adhesion">
         <script type="text/javascript">
         <!--
         try {
             DFP.renderLocation('mobile');
         } catch (e) {
-			NPR.messaging.warning('Problem fetching/rendering mobile ad server code.', 'DFP.renderLocation', NPR.messaging.constants.SPONSORSHIP_ERROR);
+            // error
         }
         // -->
         </script>
     </div>
 
-	{% endblock outer_content %}
-    
-	{{ JS.push('js/lib/html5.js') }}
-	{{ JS.push('js/lib/underscore.js') }}
+
+    {% endblock outer_content %}
+
+    {{ JS.push('js/lib/html5.js') }}
+    {{ JS.push('js/lib/underscore.js') }}
     {{ JS.push('js/lib/moment.js') }}
     {{ JS.push('js/lib/bootstrap.js') }}
+    {{ JS.push('js/lib/jquery.timeago.js') }}
+    {{ JS.push('js/lib/jquery.cookie.js') }}
+    {{ JS.push('js/lib/jquery.total-storage.min.js') }}
     {% block extra_foot_js %}{% endblock extra_foot_js %}
     {{ JS.push('js/templates.js') }}
     {{ JS.push('js/app.js') }}
@@ -170,9 +176,12 @@
     {% endblock extra_foot %}
 
     <!-- GOOGLE ANALYTICS -->
-	<script type="text/javascript">
+    <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS_ID }}']);
+        var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+        _gaq.push(['_setAccount', 'UA-5828686-4']);
+        _gaq.push(['_setDomainName', 'npr.org']);
         _gaq.push(['_trackPageview']);
         (function() {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -180,7 +189,6 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
-
 
     <!-- CHARTBEAT -->
     <script type="text/javascript">

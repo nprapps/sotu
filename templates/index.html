@@ -1,47 +1,34 @@
 {% extends '_base.html' %}
 
 {% block extra_css %}
-{{ CSS.push('less/chat.less') }}
+    {{ CSS.push('less/app-radio.less') }}
+    {{ CSS.push('less/app-chat.less') }}
+    {{ CSS.push('less/app-mr-president.less') }}
 {% endblock %}
 
-{% block header_content %}
-<header>
-	<div class="container">
-		<div class="row">
-			<div class="span12">
-				<h1>Across-The-Top Header</h1>
-				<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+{% block top_content %}
+    <h1>State of the Union 2013</h1>
+    {% include '_radio.html' %}
+{% endblock %}
+
+{% block main_content %}
+    <div id="live-chat"></div>
+
+	<div id="credits">
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<p>Banner photo: Inauguration 2009 photo by Robert Nickelsberg/Getty Images</p>
+					<p>Credits: Jeremy Bowers, Brian Boyer, Rachel Brody, Christopher Groskopf, Alyson Hurt, Justine Kenin, Becky Lettenberger, Kate Myers, Erica Ryan, Katie Zhu / NPR</p>
+				</div>
 			</div>
 		</div>
 	</div>
-</header>
-{% endblock %}
-
-
-{% block content %}
-<h1>{{ PROJECT_NAME }}</h1>
-<div id="story-meta">
-	<p class="byline">by <span>Name Here</span></p>
-	<p class="dateblock">
-		<span class="date">January 22, 2013</span>
-		<span class="time"> 3:37 AM</span>
-	</p>
-</div>
-
-{% endblock %}
-
-
-{% block wide_content %}
-<div class="row">
-	<div class="span12">
-        <div id="live-chat">
-    </div>
-</div>
 {% endblock %}
 
 {% block extra_foot_js %}
-{{ JS.push('js/lib/jquery.cookie.js') }}
-{{ JS.push('js/lib/jquery.total-storage.js') }}
-{{ JS.push('js/auth.js') }}
-{{ JS.push('js/chat.js') }}
-{% endblock extra_foot_js %}
+    {{ JS.push('js/lib/jquery.smooth-scroll.js') }}
+    {{ JS.push('js/auth.js') }}
+    {{ JS.push('js/app-radio.js') }}
+    {{ JS.push('js/chat.js') }}
+{% endblock %}
