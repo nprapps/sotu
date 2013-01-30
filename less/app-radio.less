@@ -6,7 +6,7 @@
     background: #484e58 url('@{img-root}/background-image-test.jpg') no-repeat 50% 50%;
     background-size: cover;
     color: #ddd;
-    
+
     h1 {
         padding-top: 113px;
         font: normal 54px Arial, Helvetica, sans-serif;
@@ -27,12 +27,12 @@
 	-webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;
 	border-top: 1px solid #22262d;
 	border-bottom: 1px solid #353a44;
-	
+
 	#jwplayer_wrapper { float:left; margin: 0 10px 4px 4px; }
 	#radio-htmlstream { display:none; height: 0; }
 	#radio-htmlcontrol { display:none; background-image: url('@{img-root}/playButtonOver.png'); height:41px; width:41px; float:left; margin: 0 10px 4px 4px; }
 	&.playing #radio-htmlcontrol { background-image: url('@{img-root}/pauseButtonOver.png')}
-	
+
 	#radio-feedback {
 		background-repeat: no-repeat;
 		background-image: url('@{img-root}/eq-none.gif');
@@ -52,31 +52,33 @@
 
 	#radio-feedback #radio-feedback-buffering { display:none; }
 	&.buffering #radio-feedback #radio-feedback-buffering { display:inline; }
-	
+
 	#radio-title { font-size:12px; line-height:18px; color:#999; }
 	#radio-prompt { font-size:16px; line-height:22px; font-weight:bold; }
 }
 
 
-#comingsoon { 
-	position:relative; 
-	background: url('@{img-root}/coming-soon-bg-wide.png') no-repeat right bottom; 
-	height:62px; 
-	margin:55px 0 15px -12px; 
-	float:left; 
+#comingsoon {
+	position:relative;
+	background: url('@{img-root}/coming-soon-bg-wide.png') no-repeat right bottom;
+	height:62px;
+	margin:55px 0 15px -12px;
+	float:left;
 	display:none;
-	
-	b { 
-		position:absolute; top:0; left:0; 
-		display:block; 
-		width:12px; height:6px; 
-		overflow:hidden; 
+
+	width: 480px;
+
+	b {
+		position:absolute; top:0; left:0;
+		display:block;
+		width:12px; height:6px;
+		overflow:hidden;
 		background: url('@{img-root}/coming-soon-upper-tab.png') no-repeat right bottom;
 	}
-	.message { 
-		font:bold 12px Arial, Helvetica, sans-serif; 
-		text-transform:uppercase; 
-		color:#FFF; 
+	.message {
+		font:bold 12px Arial, Helvetica, sans-serif;
+		text-transform:uppercase;
+		color:#FFF;
 		padding:20px 35px 0 30px;
 	}
 }
@@ -87,10 +89,14 @@ body.no-audio #radio { display:none; }
 body.comingsoon #comingsoon { display:block; }
 body.not-coming #comingsoon { display:none; }
 
+#comingsoon {
+	width:355px;
+}
+
 body.audio.comingsoon {
-	#comingsoon { 
-		margin: -12px 0 0 0; 
-		position: absolute; top: 0; left: 0; 
+	#comingsoon {
+		margin: -12px 0 0 0;
+		position: absolute; top: 0; left: 0;
 		height: auto;
 
 		b { display: none; }
@@ -102,21 +108,25 @@ body.audio.comingsoon {
 body.audio.not-coming {}
 
 body.no-audio.comingsoon {
-	#comingsoon { 
+	#comingsoon {
 		margin-top: 0;
 		.message { padding-top: 27px; }
 	}
 	&.pregame {
-		#comingsoon { 
+		#comingsoon {
 			margin-top: 0;
 			.message { padding-top: 21px; }
 		}
 	}
 }
 
-
+@media (max-width: 979px) and (min-width: 768px) {
+	.span8 {
+		width:620px;
+	}
+}
 @media (max-width: 767px) {
-	#radio-topper { 
+	#radio-topper {
 		margin-left: -20px; margin-right: -20px; padding-right: 20px; padding-left: 20px;
 		h1 { font-size: 44px; padding-top: 66px; }
 	}
@@ -128,7 +138,10 @@ body.no-audio.comingsoon {
 		.message { padding-left: 20px; }
 	}
 }
-@media (max-width: 480px) {
-	#radio-topper h1 { font-size: 40px; padding-top: 33px; }
-	#mr-president h2 { font-size: 30px; }
+@media (max-width: 510px) {
+	#radio-topper h1 { font-size: 30px; padding-top: 33px; }
+}
+@media (max-width: 450px) {
+	#comingsoon { width:310px; }
+	#radio-topper h1 { font-size: 25px; padding-top: 33px; }
 }
