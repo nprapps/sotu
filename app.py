@@ -30,6 +30,27 @@ def test_widget():
     """
     return render_template('test_widget.html', **make_context())
 
+@app.route('/hp-live-coverage.html')
+def hp_live_coverage():
+    """
+    External widget for homepage use during live coverage.
+    """
+    return render_template('hp-live-coverage.html', **make_context())
+
+@app.route('/hp-audio-only.html')
+def hp_audio_only():
+    """
+    External widget for homepage use during live coverage.
+    """
+    return render_template('hp-audio-only.html', **make_context())
+
+@app.route('/hp-schedule-only.html')
+def hp_schedule_only():
+    """
+    External widget for homepage use during live coverage.
+    """
+    return render_template('hp-schedule-only.html', **make_context())
+
 # Render LESS files on-demand
 @app.route('/less/<string:filename>')
 def _less(filename):
