@@ -211,15 +211,15 @@
     }
     .terms {
         border-top: 1px solid #dee2e7;
+        padding-top: 11px;
 
-        ul { margin: 0px; }
+        ul { margin: 0px 0px 11px 0px; }
 
         li {
             list-style-type: none;
             font-size: 11px;
             display: inline-block;
-            margin-left: 15px;
-            line-height: 44px;
+            margin-left: 3%;
             &:first-child { margin: 0px; }
         }
 
@@ -241,12 +241,18 @@
 		.chat-editor textarea {  width: 650px; }
 	}
 }
-@media (max-width: 979px) {
-	.chat-user-entry {
-		.chat-login, .chat-editor { width: 724px; }
-		.chat-editor textarea {  width: 250px; }
-	}
+
+@media (max-width: 1196px) {
+    .terms li:last-child { margin-left: 0px; }
 }
+
+@media (max-width: 979px) {
+    .chat-user-entry {
+            .chat-login, .chat-editor { width: 724px; }
+            .chat-editor textarea {  width: 250px; }
+    }
+}
+
 @media (max-width: 767px) {
 
     .chat-body {
