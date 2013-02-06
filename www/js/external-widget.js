@@ -3,9 +3,9 @@
 */
 $(function(){
     $('#live-chat-widget').livechatwidget({
-        chat_id: '78919',
-        chat_token: 'FtP7wRfX',
-        update_interval: 10000
+        chat_id: APP_CONFIG['CHAT']['ID'],
+        chat_token: APP_CONFIG['CHAT']['TOKEN'],
+        update_interval: APP_CONFIG['CHAT']['UPDATE_INTERVAL'],
     });
     if($(window).width() < 500) {
         $('body').addClass('skinny');
