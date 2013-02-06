@@ -11,8 +11,13 @@
     {% include '_radio.html' %}
 {% endblock %}
 
+{% block modal_link %}
+  <div id="modal-schedule-link">
+      <a href="#schedule" class="visible-phone" data-toggle="modal">View Schedule &rsaquo;</a>
+  </div>
+{% endblock %}
+
 {% block main_content %}
-    <a href="#schedule" role="button" class="btn visible-phone" data-toggle="modal">View Schedule</a>
 
     <div id="live-chat"></div>
 
@@ -25,7 +30,7 @@
       <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
       </div>
-    </div> 
+    </div>
 {% endblock %}
 
 {% block extra_foot_js %}
