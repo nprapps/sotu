@@ -210,9 +210,22 @@
         a { font-weight: bold; }
     }
     .terms {
+        border-top: 1px solid #dee2e7;
+
+        ul { margin: 0px; }
+
+        li {
+            list-style-type: none;
+            font-size: 11px;
+            display: inline-block;
+            margin-left: 15px;
+            line-height: 44px;
+            &:first-child { margin: 0px; }
+        }
+
         p {
             color: #aaa;
-            font-size:12px;
+            font-size: 11px;
         }
     }
 }
