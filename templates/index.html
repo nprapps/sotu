@@ -12,7 +12,20 @@
 {% endblock %}
 
 {% block main_content %}
+    <a href="#schedule" role="button" class="btn visible-phone" data-toggle="modal">View Schedule</a>
+
     <div id="live-chat"></div>
+
+    <div id="schedule" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="schedule" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3>State of the Union Schedule</h3>
+        </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div> 
 {% endblock %}
 
 {% block extra_foot_js %}
