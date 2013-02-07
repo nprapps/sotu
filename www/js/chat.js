@@ -107,11 +107,12 @@
             plugin.$npr.on('click', plugin.npr_click);
             plugin.$logout.on('click', plugin.logout_click);
             plugin.$anonymous_login_button.on('click', plugin.anonymous_login_click);
+            plugin.$anonymous_username.keydown(function(e) { plugin.anonymous_login_enter_key(e); });
             plugin.$npr_login_button.on('click', plugin.npr_login_click);
             plugin.$clear.on('click', plugin.clear_click);
             plugin.$comment_button.on('click', plugin.comment_click);
 
-            plugin.$chat_filter_switch.on('switch-change', plugin.chat_filter_switched);             
+            plugin.$chat_filter_switch.on('switch-change', plugin.chat_filter_switched);
 
             if (plugin.settings.anonymous) {
                 plugin.$login.find('label[for="social"],.social').hide();
@@ -607,12 +608,20 @@
 
         plugin.logout_click = function() {
             plugin.logout_user();
-            
+
             if (plugin.settings.anonymous) {
                 plugin.toggle_anonymous_login(true);
             } else {
                 plugin.toggle_anonymous_login(false);
                 plugin.toggle_npr_login(false);
+            }
+        };
+
+        plugin.anonymous_login_enter_key = function(e) {
+            console.log('yo');
+            console.log(e);
+            if (e.keyCode == 13) {
+                plugin.scribble_auth_user({ auth_route: 'anonymous', username: plugin.$anonymous_username.val() });
             }
         };
 
