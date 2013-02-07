@@ -23,7 +23,8 @@
             read_only: false,
             scribble_host: 'apiv1.scribblelive.com',
             posts_per_page: 50,
-            anonymous: false
+            anonymous: false,
+            filter_user_id: 14062382
         };
 
         var plugin = this;
@@ -51,6 +52,7 @@
         var alert_timer = null;
         var paused = false;
         var is_live = false;
+        var is_filtered = false;
 
         plugin.init = function () {
             /*
@@ -93,6 +95,11 @@
             plugin.$npr_password = plugin.$npr_login_form.find('.chat-npr-password');
             plugin.$npr_login_button = plugin.$npr_login_form.find('button');
 
+            plugin.$chat_filter_switch = $('#chat-filter-switch');
+
+            // Setup switch
+            plugin.$chat_filter_switch.switch();
+
             // Setup event handlers
             plugin.$oauth.on('click', plugin.oauth_click);
             plugin.$anonymous.on('click', plugin.anonymous_click);
@@ -102,6 +109,8 @@
             plugin.$npr_login_button.on('click', plugin.npr_login_click);
             plugin.$clear.on('click', plugin.clear_click);
             plugin.$comment_button.on('click', plugin.comment_click);
+
+            plugin.$chat_filter_switch.on('switch-change', plugin.chat_filter_switched);             
 
             if (plugin.settings.anonymous) {
                 plugin.$login.find('label[for="social"],.social').hide();
@@ -245,12 +254,24 @@
                 post.created_string += ' p.m.';
             }
 
+            post.visible = !(is_filtered && (post.Creator.Id != plugin.settings.filter_user_id));
+            //post.visible = true;
+
             if (post.Type == "TEXT") {
                 return JST.chat_text(post);
             } else if (post.Type == "IMAGE") {
                 return JST.chat_image(post);
             } else {
-                throw 'Unsupported post type.';
+                return '';
+            }
+        };
+
+        plugin.filter_posts = function() {
+            if (is_filtered) {
+                plugin.$chat_body.find('.chat-post').hide();
+                plugin.$chat_body.find('.chat-post[data-user-id="' + plugin.settings.filter_user_id + '"]').show();
+            } else {
+                plugin.$chat_body.find('.chat-post').show();
             }
         };
 
@@ -377,11 +398,7 @@
 
             // Handle normal posts
             _.each(posts_on_load.slice(start, end), function(post) {
-                try {
-                    var html = plugin.render_post(post);
-                } catch(err) {
-                    return;
-                }
+                var html = plugin.render_post(post);
 
                 new_posts.push(html);
             });
@@ -397,6 +414,10 @@
             if (next_page_index >= posts_on_load.length) {
                 plugin.$spinner.remove();
                 plugin.$spinner = null;
+            }
+
+            if (is_filtered) {
+                $(window).trigger('scroll');
             }
         };
 
@@ -609,6 +630,12 @@
         plugin.comment_click = function() {
             var safe_comment = strip_tags(plugin.$comment.val());
             plugin.post_comment(safe_comment);
+        };
+
+        plugin.chat_filter_switched = function(e, data) {
+            is_filtered = data.value;
+
+            plugin.filter_posts();
         };
 
         plugin.init();
