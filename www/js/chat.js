@@ -98,7 +98,8 @@
             plugin.$chat_filter_switch = $('#chat-filter-switch');
 
             // Setup switch
-            plugin.$chat_filter_switch.switch();
+            // NB: Call by name to keep reserved word from breaking compression
+            plugin.$chat_filter_switch['switch']();
 
             // Setup event handlers
             plugin.$oauth.on('click', plugin.oauth_click);
