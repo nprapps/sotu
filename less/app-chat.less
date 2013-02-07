@@ -1,4 +1,4 @@
-#live-chat { clear: both; }
+live-chat { clear: both; }
 
 .chat-body-wrap { float: left; }
 .chat-schedule-wrap { float: right; }
@@ -135,21 +135,8 @@
 		}
 		.register,
         .register:visited,
-        .chat-logout {
-            background:none;
-            border:none;
-            border-color:none;
-            border-width:0;
-            font-weight:bold;
-            box-shadow:none;
-            color: #6d8ac4;
-		}
         .register:hover,
         .register:active,
-        .chat-logout:hover,
-        .chat-logout:active {
-            color: #bccae5;
-        }
 		.chat-npr-login,
 		.chat-anonymous-login {
 			clear: both;
@@ -185,13 +172,14 @@
 		.btn.chat-post {
 			margin-top: -11px;
 		}
-		.btn.chat-logout {
+		.chat-logout {
 			height: auto;
 			background: none;
 			color: #4774cc;
 			padding: 0; margin: 0;
 			font-size: inherit;
 			line-height: inherit;
+            cursor: pointer;
 		}
 	}
 }
