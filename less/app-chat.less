@@ -327,7 +327,7 @@
 		.chat-login, .chat-editor { width: auto; }
 		.chat-login {
 			padding: 11px 0 0 0;
-			label { line-height: 1.2; float: none; display: block; }
+			label { line-height: 1.2; float: none; }
 			.social.btn-group { float: none; clear: both; }
 		}
 		.chat-editor {
@@ -341,6 +341,15 @@
         margin:none;
 	}
 }
+
+@media (max-width: 480px) {
+    .chat-login {
+        label { display: block; }
+        input { display: inline-block; }
+        button { display: inline-block; }
+    }
+}
+
 @media (max-width: 400px) {
     .chat-user-entry {
         padding-left:10px;
