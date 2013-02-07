@@ -22,11 +22,11 @@ S3_BUCKETS = []
 SERVERS = []
 DEBUG = True
 
-PROJECT_DESCRIPTION = 'foo'
+PROJECT_DESCRIPTION = 'Listen live and share your reactions to President Obama\'s State of the Union address.'
 SHARE_URL = 'http://%s/%s/' % (PRODUCTION_S3_BUCKETS[0], DEPLOYED_NAME)
 
 TWITTER = {
-    'TEXT': PROJECT_NAME,
+    'TEXT': PROJECT_DESCRIPTION,
     'URL': SHARE_URL
 }
 
