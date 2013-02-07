@@ -22,7 +22,8 @@
             alert_interval: 500,
             read_only: false,
             scribble_host: 'apiv1.scribblelive.com',
-            posts_per_page: 50
+            posts_per_page: 50,
+            anonymous: false
         };
 
         var plugin = this;
@@ -101,6 +102,12 @@
             plugin.$npr_login_button.on('click', plugin.npr_login_click);
             plugin.$clear.on('click', plugin.clear_click);
             plugin.$comment_button.on('click', plugin.comment_click);
+
+            if (plugin.settings.anonymous) {
+                plugin.$login.find('label[for="social"],.social').hide();
+                plugin.$anonymous_login_form.show();
+                plugin.$anonymous_login_form.css({ 'margin-top': '-12px' })
+            }
 
             // Initialize the user and the chat data.
             if (!plugin.settings.read_only) {
@@ -578,8 +585,13 @@
 
         plugin.logout_click = function() {
             plugin.logout_user();
-            plugin.toggle_anonymous_login(false);
-            plugin.toggle_npr_login(false);
+            
+            if (plugin.settings.anonymous) {
+                plugin.toggle_anonymous_login(true);
+            } else {
+                plugin.toggle_anonymous_login(false);
+                plugin.toggle_npr_login(false);
+            }
         };
 
         plugin.anonymous_login_click = function() {

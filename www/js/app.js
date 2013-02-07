@@ -7,7 +7,8 @@ $(function() {
         chat_token: APP_CONFIG['CHAT']['TOKEN'],
         update_interval: APP_CONFIG['CHAT']['UPDATE_INTERVAL'],
         alert_interval: 500,
-        read_only: false
+        read_only: false,
+        anonymous: true
     });
 
     $('.chat-schedule-wrap').append(schedule);
