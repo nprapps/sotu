@@ -9,6 +9,7 @@
     {{ CSS.push('less/hp.less') }}
     {{ CSS.render('css/hp.min.css') }}
 
+	{{ JS.push('js/app_config.js') }}
 	{{ JS.push('js/lib/jquery-1.8.3.js') }}
 	{{ JS.render('js/hp-app-header.min.js') }}
 
@@ -33,16 +34,6 @@
 	<div id="chat-update">
 		<h4>Latest In The Chat</h4>
 		<div id="live-chat-widget"></div>
-	</div>
-
-	<div id="schedule">
-		<h4>Coming Up</h4>
-		<ul>
-            <li><strong>8:30 p.m.:</strong><br/>NPR's live chat begins</li>
-            <li><strong>9 p.m.:</strong><br />President Obama delivers his address to a joint session of Congress on Capitol Hill.</li>
-            <li><strong>Following the President's speech:</strong><br /> Sen. Marco Rubio of Florida delivers the Republican response in English and Spanish.</li>
-        </ul>
-		<p class="more"><a href="http://apps.npr.org/state-of-the-union/">Join Us</a></p>
 	</div>
 
 </div>
