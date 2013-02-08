@@ -618,8 +618,6 @@
         };
 
         plugin.anonymous_login_enter_key = function(e) {
-            console.log('yo');
-            console.log(e);
             if (e.keyCode == 13) {
                 plugin.scribble_auth_user({ auth_route: 'anonymous', username: plugin.$anonymous_username.val() });
             }
