@@ -110,8 +110,6 @@ live-chat { clear: both; }
 	.chat-login,
 	.chat-editor {
 		padding: 15px 0 5px 0px;
-		width: 960px;
-		margin: 0 auto;
 	}
 
 	&.affix { bottom: 0; }
@@ -157,25 +155,27 @@ live-chat { clear: both; }
 
 	.chat-editor {
 		textarea {
-			width: 490px;
-			height: 33px;
+            width: 585px;
+			height: 32px;
 			margin-right: 11px;
+            margin-left: 15px;
 		}
 		.chat-input {
+            width: 100%;
 			line-height: 44px;
 		}
 		.chat-user-info {
 			font-size: 12px;
 			color: #666;
-			float: right;
-			margin-top: -40px;
+            margin-top: 4px;
 		}
 		.chat-username {
 			font-weight: bold;
 			color: #444;
 		}
 		.btn.chat-post {
-			margin-top: -11px;
+			margin-top: -12px;
+            height: 40px;
 		}
 		.chat-logout {
 			height: auto;
@@ -185,6 +185,7 @@ live-chat { clear: both; }
 			font-size: inherit;
 			line-height: inherit;
             cursor: pointer;
+            white-space: nowrap;
 		}
 	}
 }
@@ -195,6 +196,7 @@ live-chat { clear: both; }
     border-bottom: 1px solid #dee2e7;
     padding-bottom: 15px;
     margin-right: 22px;
+    margin-left: 15px;
 
     p {
       margin: 0 0 15px 0;
@@ -303,15 +305,22 @@ live-chat { clear: both; }
 }
 
 .chat-anonymous-login {
-    padding:10px 0 0 0;
+    padding: 10px 0 0 0;
 }
 
 // Media queries
 @media (min-width: 1200px) {
-	.chat-user-entry {
-		.chat-login, .chat-editor { width: 1170px; }
-		.chat-editor textarea {  width: 650px; }
-	}
+    .chat-user-entry {
+        .chat-editor {
+            textarea {
+                width: 750px;
+            }
+            
+            .chat-user-info {
+                margin-top: 10px;
+            }
+        }
+    }
 }
 
 @media (max-width: 1196px) {
@@ -320,13 +329,15 @@ live-chat { clear: both; }
 
 @media (max-width: 979px) {
     .chat-user-entry {
-            .chat-login, .chat-editor { width: 724px; }
-            .chat-editor textarea {  width: 250px; }
+        .chat-editor {
+            textarea {
+                width: 420px;
+            }
+        }
     }
 }
 
 @media (max-width: 767px) {
-
     .chat-body {
         margin-right: 0;
     }
@@ -346,7 +357,7 @@ live-chat { clear: both; }
 		.chat-editor {
 			label { float: none; line-height: 1.2; }
 			textarea { clear: left; width: 70%; }
-			.chat-user-info { clear: both; float: none; margin-top: 0; }
+			.chat-user-info { clear: both; float: none; margin-top: 0; margin-left: 15px; }
 		}
 	}
 	.chat-schedule-wrap {
