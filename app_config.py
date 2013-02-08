@@ -40,7 +40,7 @@ FACEBOOK = {
 
 NPR_DFP = {
     'STORY_ID': '171421875',
-    'TARGET': '\/news_stateoftheunion;storyid=171421875'
+    'TARGET': '\/news_politics;storyid=171421875'
 }
 
 GOOGLE_ANALYTICS_ID = 'UA-5828686-4'
