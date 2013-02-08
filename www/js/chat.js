@@ -95,11 +95,8 @@
             plugin.$npr_password = plugin.$npr_login_form.find('.chat-npr-password');
             plugin.$npr_login_button = plugin.$npr_login_form.find('button');
 
-            plugin.$chat_filter_switch = $('#chat-filter-switch');
-
-            // Setup switch
-            // NB: Call by name to keep reserved word from breaking compression
-            plugin.$chat_filter_switch['switch']();
+            plugin.$filter_all_posts = $('.filter-all-posts');
+            plugin.$filter_live_blog = $('.filter-live-blog');
 
             // Setup event handlers
             plugin.$oauth.on('click', plugin.oauth_click);
@@ -112,7 +109,8 @@
             plugin.$clear.on('click', plugin.clear_click);
             plugin.$comment_button.on('click', plugin.comment_click);
 
-            plugin.$chat_filter_switch.on('switch-change', plugin.chat_filter_switched);
+            plugin.$filter_all_posts.on('click', plugin.chat_filter_switched);
+            plugin.$filter_live_blog.on('click', plugin.chat_filter_switched);
 
             if (plugin.settings.anonymous) {
                 plugin.$login.find('label[for="social"],.social').hide();
@@ -640,8 +638,27 @@
             plugin.post_comment(safe_comment);
         };
 
-        plugin.chat_filter_switched = function(e, data) {
-            is_filtered = data.value;
+        plugin.chat_filter_switched = function(e) {
+            var el = e.currentTarget;
+            if (el.className == 'filter-all-posts') {
+                is_filtered = false;
+
+                // Handle UI display of selection
+                $(el).addClass('active')
+                $(el).text('Showing all posts');
+                $('.filter-live-blog').removeClass('active');
+                $('.filter-live-blog').text('Show live blog only');
+            }
+
+            else if (el.className == 'filter-live-blog') {
+                is_filtered = true;
+
+                // Handle UI display of selection
+                $(el).addClass('active')
+                $(el).text('Showing live blog only');
+                $('.filter-all-posts').removeClass('active');
+                $('.filter-all-posts').text('Show all posts');
+            }
 
             plugin.filter_posts();
         };

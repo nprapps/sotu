@@ -193,10 +193,25 @@ live-chat { clear: both; }
 // Filter button styles
 
 #filter-wrapper {
+
+    a {
+      cursor: pointer;
+      color: #4774cc;
+      font-weight: bold;
+
+      &.active {
+        cursor: default;
+        font-weight: normal;
+        font-style: italic;
+        color: #555;
+      }
+    }
+
     border-bottom: 1px solid #dee2e7;
     padding-bottom: 15px;
     margin-right: 22px;
-    margin-left: 15px;
+    padding-left: 15px;
+    margin-left: 0px;
 
     p {
       margin: 0 0 15px 0;
@@ -370,6 +385,7 @@ live-chat { clear: both; }
     }
 }
 
+
 @media (max-width: 480px) {
     .chat-login {
         label { display: block; }
@@ -398,5 +414,9 @@ live-chat { clear: both; }
     .chat-user-entry {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    #filter-wrapper {
+        padding-left: 0px;
     }
 }
