@@ -224,13 +224,33 @@ live-chat { clear: both; }
     }
 }
 
+.modal {
+    overflow-x: hidden;
+    margin: 0;
+    width: 90%;
+    left: 5%;
+    top: 5%;
+}
+
+
+.modal-body {
+    max-height: none;
+}
+
+.modal-header .close {
+    padding: 20px;
+    position: absolute;
+    right: -5px;
+    top: -10px;
+}
+
 #schedule {
+    overflow-y: auto;
+
     .btn {
       height: 35px;
       line-height: 35px;
     }
-
-    &.fade.in { top: 70px; }
 }
 
 // Schedule sidebar general styles (type, etc)
@@ -350,6 +370,12 @@ live-chat { clear: both; }
         .form-inline {
             padding-left: 10px;
         }
+    }
+}
+
+@media (max-height: 580px) {
+    .modal {
+        height: 90%;
     }
 }
 
