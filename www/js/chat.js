@@ -184,6 +184,11 @@
 
                 }
             });
+
+            // Scroll to top to show alerts
+            if ($('.chat-user-entry').css('position') == 'fixed') {
+                $('body').animate({ scrollTop: 50 }, 250);
+            }
         }
 
         plugin.post_comment = function(data) {
@@ -221,6 +226,7 @@
                 alert_html = JST.chat_alert(chat_alert);
                 plugin.$alerts.append(alert_html);
             });
+
 
             // Ignore if paused.
             if (!plugin.paused) {

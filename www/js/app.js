@@ -31,4 +31,5 @@ $(function() {
         }
     }
     $(window).scroll(function() { position_header(chat_entry, init_offset) });
+    chat_entry.find('.chat-input').click(function() { position_header(chat_entry, init_offset) });
 });
