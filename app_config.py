@@ -9,7 +9,7 @@ They will be exposed to users. Use environment variables instead.
 
 import os
 
-PROJECT_NAME = 'State Of The Union'
+PROJECT_NAME = 'State of the Union'
 DEPLOYED_NAME = 'state-of-the-union-2013'
 
 PRODUCTION_S3_BUCKETS = ['apps.npr.org', 'apps2.npr.org']
