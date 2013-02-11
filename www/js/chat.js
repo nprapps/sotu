@@ -350,6 +350,7 @@
 
                 // Updating a post already displayed
                 if ($existing.length > 0) {
+                    // Discard edits already processed
                     if (post.Id in edit_timestamps && edit_timestamps[post.Id] >= timestamp) {
                         return;
                     }
@@ -435,7 +436,7 @@
              * Fetch latest posts and render them.
              */
             $.ajax({
-                url: chat_url + '&Max=10000&Order=desc',
+                url: chat_url + '&Max=10000&Order=desc&Since=2000%2F01%2F01%2000%3A00%3A00',
                 dataType: 'jsonp',
                 cache: true,
                 success: function(data, status, xhr) {
