@@ -8,7 +8,8 @@ $(function() {
         update_interval: APP_CONFIG['CHAT']['UPDATE_INTERVAL'],
         alert_interval: 500,
         read_only: false,
-        anonymous: true
+        anonymous: true,
+        filter_user_id: APP_CONFIG['CHAT']['FILTER_USER_ID'] 
     });
 
     $('.chat-schedule-wrap').append(schedule);

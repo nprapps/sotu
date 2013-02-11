@@ -24,7 +24,7 @@
             scribble_host: 'apiv1.scribblelive.com',
             posts_per_page: 50,
             anonymous: false,
-            filter_user_id: 14062382
+            filter_user_id: null 
         };
 
         var plugin = this;
@@ -255,7 +255,6 @@
             }
 
             post.visible = !(is_filtered && (post.Creator.Id != plugin.settings.filter_user_id));
-            //post.visible = true;
 
             if (post.Type == "TEXT") {
                 return JST.chat_text(post);

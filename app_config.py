@@ -48,7 +48,8 @@ GOOGLE_ANALYTICS_ID = 'UA-5828686-4'
 CHAT = {
     'ID': '74796',
     'TOKEN': 'FtP7wRfX',
-    'UPDATE_INTERVAL': 5000
+    'UPDATE_INTERVAL': 5000,
+    'FILTER_USER_ID': 14062382
 }
 
 def configure_targets(deployment_target):
@@ -67,12 +68,14 @@ def configure_targets(deployment_target):
         DEBUG = False
 
         CHAT['ID'] = '80516'
+        CHAT['FILTER_USER_ID'] = 1417200
     else:
         S3_BUCKETS = STAGING_S3_BUCKETS
         SERVERS = STAGING_SERVERS
         DEBUG = True
 
         CHAT['ID'] = '74796'
+        CHAT['FILTER_USER_ID'] = 14062382
 
 DEPLOYMENT_TARGET = os.environ.get('DEPLOYMENT_TARGET', None)
 
