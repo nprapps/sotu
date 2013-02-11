@@ -14,20 +14,21 @@ $(function() {
 
     $('.chat-schedule-wrap').append(schedule);
 
-    function position_header() {
-        var initial_chat_entry = $('.init');
-        var fixed_chat_entry = $('#fixed-container');
+    // Cache offset before any scrolls
+    var chat_entry = $('.chat-user-entry');
+    var init_offset = chat_entry.offset();
 
-        var offset = initial_chat_entry.offset();
+    function position_header(chat_entry, init_offset) {
         var scroll_top = $(window).scrollTop();
+        var height = chat_entry.height();
 
-        if (scroll_top > offset.top + initial_chat_entry.height()) {
-            fixed_chat_entry.css({ 'visibility': 'visible'});
+        if (scroll_top > init_offset.top + height) {
+            chat_entry.css({ 'position': 'fixed', 'top': '0px', 'width': '100%' });
         }
 
         else {
-            fixed_chat_entry.css({ 'visibility': 'hidden'});
+            chat_entry.css({ 'position': 'relative', 'width': 'auto' });
         }
     }
-    $(window).scroll(position_header);
+    $(window).scroll(function() { position_header(chat_entry, init_offset) });
 });
