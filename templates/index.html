@@ -6,6 +6,16 @@
     {{ CSS.push('less/app-chat.less') }}
 {% endblock %}
 
+{% block extra_head %}
+<style>
+    .chat-post[data-user-id="{{ CHAT.FILTER_USER_ID }}"] {
+        background-color: rgba(188, 202, 229, 0.2);
+        margin: 15px 0px 15px 0px;
+        border-top: 0px;
+    }
+</style>
+{% endblock %}
+
 {% block top_content %}
     <h1>State Of The Union 2013</h1>
     {% include '_radio.html' %}
@@ -39,3 +49,4 @@
     {{ JS.push('js/app-radio.js') }}
     {{ JS.push('js/chat.js') }}
 {% endblock %}
+
