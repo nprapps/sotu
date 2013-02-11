@@ -24,7 +24,7 @@
             scribble_host: 'apiv1.scribblelive.com',
             posts_per_page: 50,
             anonymous: false,
-            filter_user_id: null 
+            filter_user_id: null
         };
 
         var plugin = this;
@@ -90,6 +90,10 @@
             plugin.$anonymous_username = plugin.$anonymous_login_form.find('.chat-anonymous-username');
             plugin.$anonymous_login_button = plugin.$anonymous_login_form.find('button');
 
+            plugin.$fixed_anonymous_login_form = plugin.$root.find('#fixed-container .chat-anonymous-login');
+            plugin.$fixed_anonymous_username = plugin.$fixed_anonymous_login_form.find('.chat-anonymous-username');
+            plugin.$fixed_anonymous_login_button = plugin.$fixed_anonymous_login_form.find('button');
+
             plugin.$npr_login_form = plugin.$root.find('.chat-npr-login');
             plugin.$npr_username = plugin.$npr_login_form.find('.chat-npr-username');
             plugin.$npr_password = plugin.$npr_login_form.find('.chat-npr-password');
@@ -104,7 +108,9 @@
             plugin.$npr.on('click', plugin.npr_click);
             plugin.$logout.on('click', plugin.logout_click);
             plugin.$anonymous_login_button.on('click', plugin.anonymous_login_click);
+            plugin.$fixed_anonymous_login_button.on('click', plugin.anonymous_login_click);
             plugin.$anonymous_username.keydown(function(e) { plugin.anonymous_login_enter_key(e); });
+            plugin.$fixed_anonymous_username.keydown(function(e) { plugin.anonymous_login_enter_key(e); });
             plugin.$npr_login_button.on('click', plugin.npr_login_click);
             plugin.$clear.on('click', plugin.clear_click);
             plugin.$comment_button.on('click', plugin.comment_click);
