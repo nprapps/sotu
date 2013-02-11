@@ -15,21 +15,19 @@ $(function() {
     $('.chat-schedule-wrap').append(schedule);
 
     // Cache offset before any scrolls
-    var chat_entry = $('.chat-user-entry');
-    var init_offset = chat_entry.offset();
+    var $chat_entry = $('.chat-user-entry');
+    var init_offset = $chat_entry.offset().top;
 
-    function position_header(chat_entry, init_offset) {
+    function position_header() {
         var scroll_top = $(window).scrollTop();
-        var height = chat_entry.height();
+        var height = $chat_entry.height();
 
-        if (scroll_top > init_offset.top + height) {
-            chat_entry.css({ 'position': 'fixed', 'top': '0px', 'width': '100%' });
-        }
-
-        else {
-            chat_entry.css({ 'position': 'relative', 'width': 'auto' });
+        if (scroll_top > init_offset + height) {
+            $chat_entry.css({ 'position': 'fixed', 'top': '0px', 'width': '100%' });
+        } else {
+            $chat_entry.css({ 'position': 'relative', 'width': 'auto' });
         }
     }
-    $(window).scroll(function() { position_header(chat_entry, init_offset) });
-    chat_entry.find('.chat-input').click(function() { position_header(chat_entry, init_offset) });
+
+    $(window).scroll(position_header);
 });
