@@ -187,7 +187,7 @@
 
             // Scroll to top to show alerts
             if ($('.chat-user-entry').css('position') == 'fixed') {
-                $('body').animate({ scrollTop: 50 }, 250);
+                $('body, html').animate({ scrollTop: 50 }, 250);
             }
         }
 
