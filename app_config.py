@@ -31,10 +31,10 @@ TWITTER = {
 }
 
 FACEBOOK = {
-    'TITLE': DEPLOYED_NAME,
+    'TITLE': PROJECT_NAME,
     'URL': SHARE_URL,
     'DESCRIPTION': PROJECT_DESCRIPTION,
-    'IMAGE_URL': '',
+    'IMAGE_URL': 'http://media.npr.org/assets/img/2012/01/24/sotu01_sq-s2.jpg',
     'APP_ID': '138837436154588'
 }
 
