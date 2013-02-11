@@ -22,7 +22,7 @@ S3_BUCKETS = []
 SERVERS = []
 DEBUG = True
 
-PROJECT_DESCRIPTION = 'Listen live and share your reactions to President Obama\'s State of the Union address.'
+PROJECT_DESCRIPTION = 'Listen in and discuss the State of the Union address with NPR\'s correspondents on our live blog.'
 SHARE_URL = 'http://%s/%s/' % (PRODUCTION_S3_BUCKETS[0], DEPLOYED_NAME)
 
 TWITTER = {
