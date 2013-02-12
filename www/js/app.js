@@ -23,9 +23,11 @@ $(function() {
         var height = $chat_entry.height();
 
         if (scroll_top > init_offset + height) {
-            $chat_entry.css({ 'position': 'fixed', 'top': '0px', 'width': '100%' });
-        } else {
-            $chat_entry.css({ 'position': 'relative', 'width': 'auto' });
+            $chat_entry.addClass('fixed');
+        }
+
+        else {
+            $chat_entry.removeClass('fixed');
         }
     }
 
