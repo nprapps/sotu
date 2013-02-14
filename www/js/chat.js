@@ -230,7 +230,7 @@
 
             // Ignore if paused.
             if (!plugin.paused) {
-                plugin.alerts_timer = setTimeout(plugin.update_alerts, plugin.settings.alert_interval);
+                //plugin.alerts_timer = setTimeout(plugin.update_alerts, plugin.settings.alert_interval);
             }
         };
 
@@ -442,9 +442,7 @@
              * Fetch latest posts and render them.
              */
             $.ajax({
-                url: chat_url + '&Max=10000&Order=desc&Since=2000%2F01%2F01%2000%3A00%3A00',
-                dataType: 'jsonp',
-                cache: true,
+                url: 'scribble-archive.json',
                 success: function(data, status, xhr) {
                     if (parseInt(data.IsLive, 10) === 1) {
                         plugin.$chat_form.show();
@@ -478,7 +476,7 @@
                 }
             }).then(function() {
                 if (!plugin.paused) {
-                    plugin.update_timer = setTimeout(plugin.update_live_chat, plugin.settings.update_interval);
+                    //plugin.update_timer = setTimeout(plugin.update_live_chat, plugin.settings.update_interval);
                 }
             });
         };
