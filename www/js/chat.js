@@ -442,7 +442,7 @@
              * Fetch latest posts and render them.
              */
             $.ajax({
-                url: 'scribble-archive.json',
+                url: 'live-data/scribble-archive.json',
                 success: function(data, status, xhr) {
                     if (parseInt(data.IsLive, 10) === 1) {
                         plugin.$chat_form.show();
